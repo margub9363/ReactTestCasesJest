@@ -15,4 +15,17 @@ test("render one row per user", () => {
   //   screen.logTestingPlaygroundURL(); //this will generate the link to testing playground
 });
 
-test("render the email and name of each user", () => {});
+test("render the email and name of each user", () => {
+  const users = [
+    { name: "rahman", email: "rahaman@gmail.com" },
+    { name: "Tannu", email: "Tannu@gmail.com" },
+  ];
+  render(<UserList users={users} />);
+
+  for (let user of users) {
+    const name = screen.getByRole("cell", { name: user.name });
+    const email = screen.getByRole("cell", { name: user.email });
+    expect(name).toBeInTheDocument();
+    expect(email).toBeInTheDocument();
+  }
+});
