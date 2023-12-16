@@ -13,3 +13,8 @@ test("it test for onChange Event ", () => {
   fireEvent.change(input, { target: { value: "a" } });
   expect(input.value).toBe("a");
 });
+
+test("it will test for snapshot", () => {
+  const container = render(<App />);
+  expect(container).toMatchSnapshot();
+});

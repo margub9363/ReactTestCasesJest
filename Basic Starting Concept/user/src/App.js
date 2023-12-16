@@ -4,7 +4,7 @@ function App() {
   const [data, setData] = useState();
   return (
     <div className="App">
-      Test On Change Event with Input Text
+      Snapshot testing
       <br />
       <input
         type="text"
