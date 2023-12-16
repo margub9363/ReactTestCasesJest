@@ -1,17 +1,16 @@
+// https://www.youtube.com/watch?v=EfdveVHHLnA&list=PL8p2I9GklV47ZpFC9sNHTXwJRgwwzdkNG&index=9
 import { useState } from "react";
-import UserForm from "./UserForm";
-import UserList from "./UserList";
-
 function App() {
-  const [users, setUsers] = useState([]);
-  const onUserAdd = (user) => {
-    setUsers([...users, user]);
-  };
+  const [data, setData] = useState();
   return (
-    <div>
-      <UserForm onUserAdd={onUserAdd} />
-      <hr />
-      <UserList users={users} />
+    <div className="App">
+      Test On Change Event with Input Text
+      <br />
+      <input
+        type="text"
+        value={data}
+        onChange={(e) => setData(e.target.value)}
+      ></input>
     </div>
   );
 }
