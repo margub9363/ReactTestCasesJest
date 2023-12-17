@@ -1,20 +1,16 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import App from "./App";
+import renderer from "react-test-renderer";
+import User from "./User";
 
-test("renders learn react link", () => {
-  // render(<App />);
-  // const linkElement = screen.getByText(/learn react/i);
-  // expect(linkElement).toBeInTheDocument();
-});
+// test("renders learn react link", () => {
+// render(<App />);
+// const linkElement = screen.getByText(/learn react/i);
+// expect(linkElement).toBeInTheDocument();
+// });
 
-test("it test for onChange Event ", () => {
-  render(<App />);
-  let input = screen.getByRole("textbox");
-  fireEvent.change(input, { target: { value: "a" } });
-  expect(input.value).toBe("a");
-});
-
-test("it will test for snapshot", () => {
-  const container = render(<App />);
-  expect(container).toMatchSnapshot();
+test("It will test for Components Method", () => {
+  let componentData = renderer.create(<User />).getInstance();
+  console.log("componentData");
+  console.log(componentData);
+  let name = "Rahman";
+  expect(componentData.testFunction(name)).toMatch("Hello! Rahman");
 });
