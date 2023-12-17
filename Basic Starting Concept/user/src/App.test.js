@@ -1,16 +1,10 @@
-import renderer from "react-test-renderer";
-import User from "./User";
+import { fireEvent, render, screen } from "@testing-library/react";
+import App from "./App";
+import "@testing-library/jest-dom";
 
-// test("renders learn react link", () => {
-// render(<App />);
-// const linkElement = screen.getByText(/learn react/i);
-// expect(linkElement).toBeInTheDocument();
-// });
-
-test("It will test for Components Method", () => {
-  let componentData = renderer.create(<User />).getInstance();
-  console.log("componentData");
-  console.log(componentData);
-  let name = "Rahman";
-  expect(componentData.testFunction(name)).toMatch("Hello! Rahman");
+test("This Test is used for testing Methods of Functional Component", () => {
+  render(<App />);
+  const btn = screen.getByTestId("btn1");
+  fireEvent.click(btn);
+  expect(screen.getByText("hello")).toBeInTheDocument();
 });
