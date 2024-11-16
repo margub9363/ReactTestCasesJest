@@ -1,0 +1,19 @@
+{
+  "name": "com.jest.testing",
+  "version": "1.0.0",
+  "description": "jest Testing library ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/margub9363/ReactTestCasesJest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/margub9363/ReactTestCasesJest/issues"
+  },
+  "homepage": "https://github.com/margub9363/ReactTestCasesJest#readme"
+}
